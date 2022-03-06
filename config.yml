@@ -6,8 +6,8 @@ GRABCUT_PATH: "./datasets/GrabCut"
 BERKELEY_PATH: "./datasets/Berkeley"
 DAVIS_PATH: "./datasets/DAVIS"
 COCO_MVAL_PATH: "./datasets/COCO_MVal"
-IM_SAT_VAL_SMALL_PATH: ".datasets/IM_SAT_VAL_SMALL"
-IM_SAT_VAL_PATH: ".datasets/IM_SAT_VAL"
+IM_SAT_VAL_SMALL_PATH: "./datasets/IM_SAT_VAL_SMALL"
+IM_SAT_VAL_PATH: "./datasets/IM_SAT_VAL"
 
 # Train datasets
 SBD_PATH: "./datasets/SBD"
