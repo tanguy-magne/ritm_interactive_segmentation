@@ -7,11 +7,11 @@ from isegm.data.base import ISDataset
 from isegm.data.sample import DSample
 
 
-class ImSatTestDataset(ISDataset):
+class ImSatDataset(ISDataset):
     def __init__(self, dataset_path,
                  images_dir_name='img', masks_dir_name='gt',
                  **kwargs):
-        super(ImSatTestDataset, self).__init__(**kwargs)
+        super(ImSatDataset, self).__init__(**kwargs)
 
         self.dataset_path = Path(dataset_path)
         self._images_path = self.dataset_path / images_dir_name

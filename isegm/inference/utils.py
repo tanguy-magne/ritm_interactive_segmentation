@@ -4,7 +4,7 @@ from pathlib import Path
 import torch
 import numpy as np
 
-from isegm.data.datasets import GrabCutDataset, BerkeleyDataset, DavisDataset, SBDEvaluationDataset, PascalVocDataset, ImSatTestDataset
+from isegm.data.datasets import GrabCutDataset, BerkeleyDataset, DavisDataset, SBDEvaluationDataset, PascalVocDataset, ImSatDataset
 from isegm.utils.serialization import load_model
 
 
@@ -61,9 +61,9 @@ def get_dataset(dataset_name, cfg):
     elif dataset_name == 'COCO_MVal':
         dataset = DavisDataset(cfg.COCO_MVAL_PATH)
     elif dataset_name == 'IM_SAT_VAL_SMALL':
-        dataset = ImSatTestDataset(cfg.IM_SAT_VAL_SMALL_PATH)
+        dataset = ImSatDataset(cfg.IM_SAT_VAL_SMALL_PATH)
     elif dataset_name == 'IM_SAT_VAL':
-        dataset = ImSatTestDataset(cfg.IM_SAT_VAL_PATH)
+        dataset = ImSatDataset(cfg.IM_SAT_VAL_PATH)
     else:
         dataset = None
 
