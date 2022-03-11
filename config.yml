@@ -1,5 +1,6 @@
 INTERACTIVE_MODELS_PATH: "./weights"
 EXPS_PATH: "./experiments"
+BACKUP_CKPT: "/content/drive/MyDrive/MVA/2.1.SatelliteIImage/Projet/backup_ckpt/"
 
 # Evaluation datasets
 GRABCUT_PATH: "./datasets/GrabCut"
