@@ -58,7 +58,7 @@ def train(model, cfg, model_cfg):
         min_object_area=1000,
         keep_background_prob=0.05,
         points_sampler=points_sampler,
-        epoch_len=30000,
+        epoch_len=30000
     )
 
     valset = ImSatDataset(
