@@ -63,7 +63,7 @@ class ISDataset(torch.utils.data.dataset.Dataset):
         valid_augmentation = False
         while not valid_augmentation:
             sample.augment(self.augmentator)
-            keep_sample = (self.keep_background_prob < 0.0 or
+            keep_sample = (self.keep_background_prob <= 0.0 or
                            random.random() < self.keep_background_prob)
             valid_augmentation = len(sample) > 0 or keep_sample
 
