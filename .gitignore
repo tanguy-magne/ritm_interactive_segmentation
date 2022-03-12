@@ -2,6 +2,8 @@
 *__pycache__*
 weights
 experiments
+isegm/datasets
+isegm/pretrained_models/last_checkpoint.pth
 *.so
 *.ipynb_checkpoints*
 *.yml
