@@ -186,8 +186,8 @@ class ISTrainer(object):
             save_checkpoint(self.net, self.cfg.CHECKPOINTS_PATH, prefix=self.task_prefix,
                             epoch=None, multi_gpu=self.cfg.multi_gpu)
 
-            os.system(f"cp {self.cfg.CHECKPOINTS_PATH}/last_checkpoint.pth {self.cfg.BACKUP_CKPT}")
-            with open(f'{self.cfg.BACKUP_CKPT}latest_epochs.txt', 'w') as f:
+            os.system(f"cp {self.cfg.CHECKPOINTS_PATH}/last_checkpoint.pth {self.cfg.BACKUP_CKPT}{self.cfg.exp_name}_last_checkpoint.pth")
+            with open(f'{self.cfg.BACKUP_CKPT}{self.cfg.exp_name}_latest_epochs.txt', 'w') as f:
                 f.write(f'The checkpoint corresponds to epochs {epoch}.\n')
                 f.write(f'The actual learning rate is {self.optim.param_groups[0]["lr"] }.')
 
