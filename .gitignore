@@ -5,6 +5,7 @@ experiments
 isegm/datasets
 datasets
 isegm/pretrained_models/last_checkpoint.pth
+pretrained_models/last_checkpoint.pth
 *.so
 *.ipynb_checkpoints*
 *.yml
