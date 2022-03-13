@@ -18,9 +18,12 @@ def init_model(cfg):
 
     model.to(cfg.device)
     model.apply(initializer.XavierGluon(rnd_type='gaussian', magnitude=2.0))
-    model.feature_extractor.load_pretrained_weights(cfg.IMAGENET_PRETRAINED_MODELS.HRNETV2_W18_COCOLVIS)    
-    # model.feature_extractor.load_pretrained_weights(cfg.IMAGENET_PRETRAINED_MODELS.LAST_CKPT)
-    # print("Loading weights from previous checkppoints training.")
+    ckpt_path = cfg.IMAGENET_PRETRAINED_MODELS.HRNETV2_W18_COCOLVIS
+    # ckpt_path = cfg.IMAGENET_PRETRAINED_MODELS.LAST_CKPT
+    try:
+      model.load_state_dict(torch.load(ckpt_path)["state_dict"])
+    except RuntimeError :
+      print("Didn't load all weights")
 
     return model, model_cfg
 
