@@ -92,7 +92,7 @@ def compute_noc_metric(all_ious, iou_thrs, max_clicks=20):
                                for iou_arr in all_ious if not np.any(np.isnan(iou_arr))], dtype=np.int)
 
         score = scores_arr.mean()
-        over_max = (scores_arr == max_clicks).sum()
+        over_max = (scores_arr == max_clicks).sum() / len(scores_arr)
 
         noc_list.append(score)
         over_max_list.append(over_max)
