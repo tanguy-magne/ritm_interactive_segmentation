@@ -127,7 +127,7 @@ def get_results_table(noc_list, over_max_list, brs_type, dataset_name, mean_spc,
                       n_clicks=20, model_name=None):
     table_header = (f'|{"BRS Type":^13}|{"Dataset":^17}|'
                     f'{"NoC@80%":^9}|{"NoC@85%":^9}|{"NoC@90%":^9}|'
-                    f'{">="+str(n_clicks)+"@85%":^9}|{">="+str(n_clicks)+"@90%":^9}|'
+                    f'{">="+str(n_clicks)+"@80%":^9}|{">="+str(n_clicks)+"@85%":^9}|{">="+str(n_clicks)+"@90%":^9}|'
                     f'{"SPC,s":^7}|{"Time":^9}|')
     row_width = len(table_header)
 
@@ -140,8 +140,9 @@ def get_results_table(noc_list, over_max_list, brs_type, dataset_name, mean_spc,
     table_row += f'{noc_list[0]:^9.2f}|'
     table_row += f'{noc_list[1]:^9.2f}|' if len(noc_list) > 1 else f'{"?":^9}|'
     table_row += f'{noc_list[2]:^9.2f}|' if len(noc_list) > 2 else f'{"?":^9}|'
-    table_row += f'{over_max_list[1]:^9}|' if len(noc_list) > 1 else f'{"?":^9}|'
-    table_row += f'{over_max_list[2]:^9}|' if len(noc_list) > 2 else f'{"?":^9}|'
+    table_row += f'{over_max_list[0]:^9.3f}|' if len(noc_list) > 1 else f'{"?":^9}|'
+    table_row += f'{over_max_list[1]:^9.3f}|' if len(noc_list) > 1 else f'{"?":^9}|'
+    table_row += f'{over_max_list[2]:^9.3f}|' if len(noc_list) > 2 else f'{"?":^9}|'
     table_row += f'{mean_spc:^7.3f}|{eval_time:^9}|'
 
     return header, table_row
