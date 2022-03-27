@@ -1,6 +1,5 @@
 .idea/*
 *__pycache__*
-weights
 experiments
 isegm/datasets
 datasets
