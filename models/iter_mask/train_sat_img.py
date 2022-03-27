@@ -60,18 +60,18 @@ def train(model, cfg, model_cfg):
     trainset = ImSatDataset(
         cfg.IM_SAT_TRAIN_PATH,
         augmentator=train_augmentator,
-        min_object_area=1000,
+        min_object_area=50,
         keep_background_prob=0.05,
         points_sampler=points_sampler,
-        epoch_len=30000
+        epoch_len=5000
     )
 
     valset = ImSatDataset(
         cfg.IM_SAT_VAL_SMALL_PATH,
         augmentator=val_augmentator,
-        min_object_area=1000,
+        min_object_area=50,
         points_sampler=points_sampler,
-        epoch_len=2000
+        epoch_len=200
     )
 
     optimizer_params = {
